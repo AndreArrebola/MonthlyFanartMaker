@@ -170,7 +170,10 @@ namespace MonthlyFanartMaker
             }
             string table = File.ReadAllText(Application.StartupPath + "/basetable.txt");
             string tabledit = String.Format(table, arrayfanart[0, 3], arrayfanart[0, 2], arrayfanart[0, 0], arrayfanart[1, 3], arrayfanart[1, 2], arrayfanart[1, 0], arrayfanart[2, 3], arrayfanart[2, 2], arrayfanart[2, 0], arrayfanart[3, 3], arrayfanart[3, 2], arrayfanart[3, 0], arrayfanart[4, 3], arrayfanart[4, 2], arrayfanart[4, 0], arrayfanart[5, 3], arrayfanart[5, 2], arrayfanart[5, 0], arrayfanart[6, 3], arrayfanart[6, 2], arrayfanart[6, 0], arrayfanart[7, 3], arrayfanart[7, 2], arrayfanart[7, 0], arrayfanart[8, 3], arrayfanart[8, 2], arrayfanart[8, 0], arrayfanart[9, 3], arrayfanart[9, 2], arrayfanart[9, 0], arrayfanart[10, 3], arrayfanart[10, 2], arrayfanart[10, 0], arrayfanart[11, 3], arrayfanart[11, 2], arrayfanart[11, 0], arrayfanart[12, 3], arrayfanart[12, 2], arrayfanart[12, 0], arrayfanart[13, 3], arrayfanart[13, 2], arrayfanart[13, 0], arrayfanart[14, 3], arrayfanart[14, 2], arrayfanart[14, 0]);
-            Clipboard.SetText(tabledit);
+            string bbtemp = File.ReadAllText(Application.StartupPath + "/bbtemplate.txt");
+            string bbfinal = String.Format(bbtemp, tabledit);
+            Clipboard.SetText(bbfinal);
+            MessageBox.Show("BBCode generated! Sent to your clipboard.");
         }
         public string colorcode(string media)
         {
