@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Maker));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tx_tag = new System.Windows.Forms.TextBox();
@@ -45,6 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tx_nick = new System.Windows.Forms.TextBox();
             this.table_fanarts = new System.Windows.Forms.DataGridView();
+            this.btn_go = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Fanart = new System.Windows.Forms.DataGridViewImageColumn();
             this.Nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Media = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -52,10 +58,6 @@
             this.Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Update = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_go = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mediapv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picprev)).BeginInit();
@@ -103,6 +105,7 @@
             this.mediapv.Size = new System.Drawing.Size(21, 21);
             this.mediapv.TabIndex = 12;
             this.mediapv.TabStop = false;
+            this.mediapv.Click += new System.EventHandler(this.mediapv_Click);
             // 
             // btn_add
             // 
@@ -202,6 +205,7 @@
             "Deviantart",
             "Instagram",
             "Reddit",
+            "Steam",
             "Tumblr",
             "Twitter"});
             this.media_box.Location = new System.Drawing.Point(196, 36);
@@ -250,6 +254,45 @@
             this.table_fanarts.TabIndex = 2;
             this.table_fanarts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_fanarts_CellContentClick);
             // 
+            // btn_go
+            // 
+            this.btn_go.Location = new System.Drawing.Point(351, 390);
+            this.btn_go.Name = "btn_go";
+            this.btn_go.Size = new System.Drawing.Size(263, 48);
+            this.btn_go.TabIndex = 7;
+            this.btn_go.Text = "Generate BBCode";
+            this.btn_go.UseVisualStyleBackColor = true;
+            this.btn_go.Click += new System.EventHandler(this.Btn_go_Click);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Delete";
+            this.dataGridViewImageColumn1.Image = global::MonthlyFanartMaker.Properties.Resources.no;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Update";
+            this.dataGridViewImageColumn2.Image = global::MonthlyFanartMaker.Properties.Resources.image;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::MonthlyFanartMaker.Properties.Resources.Milinili_Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 387);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Made by Bortverde\r\nBackground made by Sanka\r\nSmall mouse made by Milinili");
+            // 
             // Fanart
             // 
             this.Fanart.HeaderText = "Fanart";
@@ -271,6 +314,7 @@
             "Deviantart",
             "Instagram",
             "Reddit",
+            "Steam",
             "Tumblr",
             "Twitter"});
             this.Media.Name = "Media";
@@ -305,43 +349,6 @@
             this.Update.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Update.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Update.Width = 50;
-            // 
-            // btn_go
-            // 
-            this.btn_go.Location = new System.Drawing.Point(351, 390);
-            this.btn_go.Name = "btn_go";
-            this.btn_go.Size = new System.Drawing.Size(263, 48);
-            this.btn_go.TabIndex = 7;
-            this.btn_go.Text = "Generate BBCode";
-            this.btn_go.UseVisualStyleBackColor = true;
-            this.btn_go.Click += new System.EventHandler(this.Btn_go_Click);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Delete";
-            this.dataGridViewImageColumn1.Image = global::MonthlyFanartMaker.Properties.Resources.no;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Update";
-            this.dataGridViewImageColumn2.Image = global::MonthlyFanartMaker.Properties.Resources.image;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MonthlyFanartMaker.Properties.Resources.Milinili_Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 387);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // Maker
             // 
@@ -392,6 +399,7 @@
         private System.Windows.Forms.Button btn_go;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewImageColumn Fanart;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nickname;
         private System.Windows.Forms.DataGridViewComboBoxColumn Media;

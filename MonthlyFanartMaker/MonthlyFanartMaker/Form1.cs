@@ -50,11 +50,18 @@ namespace MonthlyFanartMaker
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            WebClient wc = new WebClient();
-            byte[] bytes = wc.DownloadData(tx_thumb.Text);
-            MemoryStream ms = new MemoryStream(bytes);
-            System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-            picprev.Image = img;
+            try
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(tx_thumb.Text);
+                MemoryStream ms = new MemoryStream(bytes);
+                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                picprev.Image = img;
+            }
+            catch
+            {
+                MessageBox.Show("Please add the thumbnail.");
+            }
         }
 
         private void Tx_tag_TextChanged(object sender, EventArgs e)
@@ -193,6 +200,10 @@ namespace MonthlyFanartMaker
             {
                 return "@FE6831";
             }
+            else if (media == "Steam")
+            {
+                return "@26A4E0";
+            }
             else if (media == "Tumblr")
             {
                 return "@456FAD";
@@ -213,31 +224,35 @@ namespace MonthlyFanartMaker
         {
             if (media == "Atelier 801")
             {
-                return "http://transformice.com/images/x_transformice/x_divers/a801.png";
+                return "https://www.transformice.com/images/x_transformice/x_divers/a801.png";
             }
             else if (media == "Deviantart")
             {
-                return "http://transformice.com/images/x_transformice/x_divers/deviantart.png";
+                return "https://www.transformice.com/images/x_transformice/x_divers/deviantart.png";
             }
             else if (media == "Instagram")
             {
-                return "http://transformice.com/images/x_transformice/x_divers/instagram.png";
+                return "https://www.transformice.com/images/x_transformice/x_divers/instagram.png";
             }
             else if (media == "Reddit")
             {
                 return "https://i.imgur.com/TlTRhQY.png";
             }
+            else if (media == "Steam")
+            {
+                return "https://i.imgur.com/TcshcED.png";
+            }
             else if (media == "Tumblr")
             {
-                return "http://transformice.com/images/x_transformice/x_divers/tumblr.png";
+                return "https://www.transformice.com/images/x_transformice/x_divers/tumblr.png";
             }
             else if (media == "Twitter")
             {
-                return "http://transformice.com/images/x_transformice/x_divers/twitter.png";
+                return "https://www.transformice.com/images/x_transformice/x_divers/twitter.png";
             }
             else
             {
-                return "http://transformice.com/images/x_transformice/x_divers/a801.png";
+                return "https://www.transformice.com/images/x_transformice/x_divers/a801.png";
             }
 
 
@@ -254,7 +269,7 @@ namespace MonthlyFanartMaker
                 nick = nick.Replace("#", "[/b][size=10]#");
                 nick = nick.Replace("@", "#");
                 nick += "[/size]";
-                nick = String.Format("[img]http://transformice.com/images/x_transformice/x_divers/a801.png[/img] [color=#009D9D][b]{0}[/color]", nick);
+                nick = String.Format("[img]https://www.transformice.com/images/x_transformice/x_divers/a801.png[/img] [color=#009D9D][b]{0}[/color]", nick);
             }
             else
             {
@@ -264,6 +279,11 @@ namespace MonthlyFanartMaker
             
 
             return nick;
+        }
+
+        private void mediapv_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
