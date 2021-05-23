@@ -22,3 +22,4 @@ Embora o programa já seja funcional, ainda é possível expandí-lo. As mudanç
 - [ ] README.md em inglês;
 - [ ] Uma maneira de exportar e importar entradas na forma de arquivos de texto;
 - [ ] Adicionar um template alternativo que utilize Markdown em vez de BBCode, para que possa ser utilizado em mais lugares.
+- [ ] Tornar o programa mais generalista, possivelmente com um novo nome
